@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxSlideTime;
     public float slideForce = 5f;
     public float slideCooldown = 1000;
+    private float slideTimerCooldown;
     private bool canSlide = false;
     private float slideTimer;
     private bool isSliding;
@@ -89,6 +90,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (!canSlide)
+        {
+            slideTimerCooldown -= Time.deltaTime;
+
+            if (slideTimerCooldown <= 0)
+            {
+                canSlide = true;
+            }
+        }
+
         HandleState();
 
         rb.maxLinearVelocity = speedLimit;
@@ -121,7 +132,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (isSliding)
         {
-            Debug.Log("Sliding");
             SlidingMovement();
         }
     }
@@ -161,6 +171,36 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    private void StartSlide()
+    {
+        isSliding = true;
+
+        slideTimer = maxSlideTime;
+    }
+
+    private void SlidingMovement()
+    {
+        Vector3 inputDirection = orientation.forward * direction.y + orientation.right * direction.x;
+
+        rb.AddForce(inputDirection * slideForce, ForceMode.Force);
+
+        // update timer
+        slideTimer -= Time.deltaTime;
+
+        if (slideTimer <= 0)
+            StopSliding();
+    }
+
+    private void StopSliding()
+    {
+        isSliding = false;
+
+        transform.localScale = new Vector3(transform.localScale.x, baseSize, transform.localScale.z);
+
+        canSlide = false;
+        slideTimerCooldown = slideCooldown;
+    }
+
     private void JumpAction(InputAction.CallbackContext ctx)
     {
         if (IsGrounded())
@@ -195,45 +235,13 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
 
             // Slide
-            if (rb.linearVelocity.magnitude > 5)
-            {
-                Debug.Log("Slide");
+            if (rb.linearVelocity.magnitude > 5 && canSlide)
                 StartSlide();
-            }
 
             // Crouch
             else 
                 state = PlayerState.crouching;
         }
-    }
-
-    private void StartSlide()
-    {
-        isSliding = true;
-
-        slideTimer = maxSlideTime;
-    }
-
-    private void SlidingMovement()
-    {
-        Vector3 inputDirection = orientation.forward * direction.y + orientation.right * direction.x;
-
-        Debug.Log("Vroooom");
-        rb.AddForce(inputDirection * slideForce, ForceMode.Force);
-
-        // update timer
-        slideTimer -= Time.deltaTime;
-
-        if (slideTimer <= 0)
-            StopSliding();
-    }
-
-    private void StopSliding()
-    {
-        Debug.Log("stop");
-        isSliding = false;
-
-        transform.localScale = new Vector3(transform.localScale.x, baseSize, transform.localScale.z);
     }
 
     private void UnCrouchAction(InputAction.CallbackContext ctx)
