@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2003477429310593172}
   - component: {fileID: 7873820590448615070}
   - component: {fileID: 8675755680094808828}
+  - component: {fileID: 2360323975665228993}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,6 +79,27 @@ MonoBehaviour:
   fireRate: 2
   launchArea: {fileID: 1114882355196263190}
   checkRadius: 20
+--- !u!65 &2360323975665228993
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095079903891264305}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.88, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7142710446121804550
 GameObject:
   m_ObjectHideFlags: 0

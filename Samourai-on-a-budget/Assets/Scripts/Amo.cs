@@ -35,6 +35,9 @@ public class Amo : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Boom boom
+        if (other.CompareTag("Player"))
+        {
+            // boom boom
+        }
     }
 }
