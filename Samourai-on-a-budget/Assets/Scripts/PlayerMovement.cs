@@ -144,7 +144,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(GetMoveDirection() * moveSpeed, ForceMode.Force);
 
             // Add force down so we don't get weird movment
-            rb.AddForce(Vector3.down * 80f, ForceMode.Impulse);
+            rb.AddForce(Vector3.down * 50f, ForceMode.Force);
         }
 
         moveDirection = flatForward * direction.y + orientation.right * direction.x;
@@ -256,7 +256,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool OnSlop()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, out slopehit, playerHeight * .5f * .3f))
+        if (Physics.Raycast(transform.position, Vector3.down, out slopehit, playerHeight * .5f + .3f))
         {
             float angle = Vector3.Angle(Vector3.up, slopehit.normal);
             return angle < maxSlopAngle && angle != 0;
