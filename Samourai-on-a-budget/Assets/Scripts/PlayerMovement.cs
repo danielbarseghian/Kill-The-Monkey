@@ -21,15 +21,15 @@ public class PlayerMovement : MonoBehaviour
     public int speedLimit = 0;
     Vector2 direction;
     Vector3 moveDirection;
-    public float groundDrag;
     public LayerMask groundMask;
     public float groundCheckDistance = .5f;
     public int jumpForce;
     private PlayerState state;
-    private bool canSprint;
 
     [Header("Drag")]
     public float playerHeight;
+    public float groundDrag;
+    public float airDrag = 1;
     Rigidbody rb;
 
     [Header("Crouch")]
@@ -109,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
         if (grounded)
             rb.linearDamping = groundDrag;
         else
-            rb.linearDamping = 0;
+            rb.linearDamping = airDrag;
 
         speedText.SetText($"{rb.linearVelocity.magnitude}");
 
@@ -121,9 +121,6 @@ public class PlayerMovement : MonoBehaviour
 
         else if (grounded && isSliding)
             state = PlayerState.sliding;
-
-        // turn off gravity if we are on a slop
-        rb.useGravity = !OnSlop();
     }
 
     void FixedUpdate()
