@@ -19,17 +19,17 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        // Look at player
-        Vector3 look = player.position;
-        look.y = transform.position.y;
-
-        transform.LookAt(look);
-
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
+        
         // If player is inside the radius, shoot
         if (distanceToPlayer <= checkRadius)
         {
+            // Look at player
+            Vector3 look = player.position;
+            look.y = transform.position.y;
+
+            transform.LookAt(look);
+        
             // Launch projectile
             fireTimer += Time.deltaTime;
             if (fireTimer >= fireRate) {
