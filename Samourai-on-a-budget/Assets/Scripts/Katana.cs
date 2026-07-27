@@ -19,7 +19,7 @@ public class Katana : MonoBehaviour
         transform.rotation = Quaternion.Euler(orientation.eulerAngles.x, orientation.eulerAngles.y, 0);
 
         // Check if an enemy is in range AND the player just pressed the button
-        if (killObject != null && slayAction.WasPressedThisFrame())
+        if (killObject && slayAction.WasPressedThisFrame())
         {
             Destroy(killObject);
             killObject = null; // Clear the reference since the object is gone
