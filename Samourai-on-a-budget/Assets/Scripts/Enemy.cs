@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -7,14 +8,19 @@ public class Enemy : MonoBehaviour
 
     [Header("Bullets")]
     public GameObject amo;
-    public float fireRate = 1;
+    public float fireRateMax = 3;
+    public float fireRateMin = 1;
+    private float fireRate;
     public Transform launchArea;
     public float checkRadius = 20;
     private float fireTimer;
+    [SerializeField] private LayerMask lineOfSightMask;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        fireRate = Random.Range(fireRateMin, fireRateMax);
     }
 
     void Update()
@@ -24,7 +30,18 @@ public class Enemy : MonoBehaviour
         // If player is inside the radius, shoot
         if (distanceToPlayer <= checkRadius)
         {
-            // Look at player
+            Vector3 direction = (player.position - launchArea.position).normalized;
+            float distance = Vector3.Distance(launchArea.position, player.position);
+
+            if (Physics.Raycast(launchArea.position, direction, out RaycastHit hit, distance, lineOfSightMask))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    // Player was the first thing hit, so there is a clear line of sight.
+                    Instantiate(amo, launchArea.position, transform.rotation);
+                }
+            }
+                // Look at player
             Vector3 look = player.position;
             look.y = transform.position.y;
 
@@ -32,7 +49,8 @@ public class Enemy : MonoBehaviour
         
             // Launch projectile
             fireTimer += Time.deltaTime;
-            if (fireTimer >= fireRate) {
+            if (fireTimer >= fireRate) 
+            {
                 Instantiate(amo, launchArea.position, transform.rotation);
                 fireTimer = 0f;
             }

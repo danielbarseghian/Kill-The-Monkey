@@ -5,6 +5,7 @@ public class Katana : MonoBehaviour
 {
     public InputAction slayAction;
     public Transform orientation;
+    public Animator animator;
     
     // Tracks the current enemy inside our weapon's trigger zone
     private GameObject killObject;
@@ -18,11 +19,16 @@ public class Katana : MonoBehaviour
     {
         transform.rotation = Quaternion.Euler(orientation.eulerAngles.x, orientation.eulerAngles.y, 0);
 
-        // Check if an enemy is in range AND the player just pressed the button
-        if (killObject && slayAction.WasPressedThisFrame())
+        if (slayAction.WasPressedThisFrame())
         {
-            Destroy(killObject);
-            killObject = null; // Clear the reference since the object is gone
+            animator.SetTrigger("Swing");
+
+            // Check if an enemy is in range AND the player just pressed the button
+            if (killObject)
+            {
+                Destroy(killObject);
+                killObject = null; // Clear the reference since the object is gone
+            }
         }
     }
 

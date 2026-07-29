@@ -76,9 +76,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   amo: {fileID: 881643468675299150, guid: 896eb7ea18c97b985a7417c8c6e0cde5, type: 3}
-  fireRate: 2
+  fireRateMax: 2
+  fireRateMin: 0.75
   launchArea: {fileID: 1114882355196263190}
   checkRadius: 20
+  lineOfSightMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!65 &2360323975665228993
 BoxCollider:
   m_ObjectHideFlags: 0
