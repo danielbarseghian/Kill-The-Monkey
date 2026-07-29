@@ -3,3 +3,4 @@ A samourai game where the enemies have guns but youre too cool for that so you h
 
 Credits: 
  - rkmorello for the ninja model
+ - Rudolfs.Balcers for katana model
