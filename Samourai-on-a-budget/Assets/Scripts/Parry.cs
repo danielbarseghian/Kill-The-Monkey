@@ -8,6 +8,7 @@ public class Parry : MonoBehaviour
     public Transform orientation;
     public AudioClip parryAudio;
     public AudioSource audioSource;
+    public Animator animator;
 
     void Update()
     {
@@ -15,6 +16,7 @@ public class Parry : MonoBehaviour
 
         if (parryObject && parryInputAction.WasPressedThisFrame())
         {
+            animator.SetTrigger("Parry");
             audioSource.PlayOneShot(parryAudio);
             Destroy(parryObject);
         }
