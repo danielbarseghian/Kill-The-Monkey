@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3861437241840249642}
-  - component: {fileID: 5269317693881925972}
   - component: {fileID: 5310130812301160113}
+  - component: {fileID: 1064368117508179225}
   m_Layer: 6
   m_Name: Katana Area
   m_TagString: Untagged
@@ -34,27 +34,6 @@ Transform:
   - {fileID: 6178304892338812798}
   m_Father: {fileID: 5902090323117050778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5269317693881925972
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839390144165407356}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.25, z: 1.04}
 --- !u!114 &5310130812301160113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,6 +64,28 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   orientation: {fileID: 7617755039519536821}
+  animator: {fileID: 2049747189180604399}
+--- !u!65 &1064368117508179225
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839390144165407356}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1537288040845976859
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,92 +215,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &2341668559566158751
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3542228382734303680}
-  - component: {fileID: 590924620997646485}
-  - component: {fileID: 3380744274783216733}
-  m_Layer: 6
-  m_Name: Parry Area
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3542228382734303680
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2341668559566158751}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5902090323117050778}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &590924620997646485
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2341668559566158751}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.61, y: 1.72, z: 3.19}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3380744274783216733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2341668559566158751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdde58025147cf64aace3ecac7842fc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Parry
-  parryInputAction:
-    m_Name: Parry Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 22a9b9f3-f9e1-4888-85cc-c02ca98c448f
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 62185be5-f04b-4ffb-ad07-b1c034522fd7
-      m_Path: <Keyboard>/f
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Parry Input
-      m_Flags: 0
-    m_Flags: 0
-  orientation: {fileID: 7617755039519536821}
-  parryAudio: {fileID: 8300000, guid: c29a60274532a04419f151955a619a17, type: 3}
-  audioSource: {fileID: 5936489522206605038}
 --- !u!1 &3045425248377569953
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,7 +250,6 @@ Transform:
   - {fileID: 7617755039519536821}
   - {fileID: 3612360941944947340}
   - {fileID: 3861437241840249642}
-  - {fileID: 3542228382734303680}
   - {fileID: 8110454894539082945}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -586,8 +500,11 @@ GameObject:
   - component: {fileID: 6178304892338812798}
   - component: {fileID: 6551552394030033094}
   - component: {fileID: 7889265145990763599}
+  - component: {fileID: 5964292100605082646}
+  - component: {fileID: 2049747189180604399}
+  - component: {fileID: 1993786617618681458}
   m_Layer: 0
-  m_Name: Cylinder.001
+  m_Name: Katana Obj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -601,13 +518,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8258933263715012771}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7001857, y: 0.09869171, z: -0.0986917, w: 0.70018566}
-  m_LocalPosition: {x: -0.11105347, y: -0.4018184, z: -0.5313568}
+  m_LocalRotation: {x: -0.19882025, y: -0.13748698, z: -0.630631, w: 0.73747706}
+  m_LocalPosition: {x: 0.566, y: -0.1219462, z: 0.102710724}
   m_LocalScale: {x: 2.0223873, y: 2.022387, z: 2.0223868}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3861437241840249642}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -27.818, y: 3.11, z: -81.839}
 --- !u!33 &6551552394030033094
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -665,3 +582,79 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5964292100605082646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8258933263715012771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdde58025147cf64aace3ecac7842fc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Parry
+  parryInputAction:
+    m_Name: Parry Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d5757199-093a-439b-8b53-c147626519d4
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 610cb48f-4d7e-48a5-998c-d3e04a233f00
+      m_Path: <Keyboard>/f
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Parry Input
+      m_Flags: 0
+    m_Flags: 0
+  orientation: {fileID: 7617755039519536821}
+  parryAudio: {fileID: 8300000, guid: c29a60274532a04419f151955a619a17, type: 3}
+  audioSource: {fileID: 5936489522206605038}
+  animator: {fileID: 2049747189180604399}
+--- !u!95 &2049747189180604399
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8258933263715012771}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7b313b324f6201a4ea739c9cd70c750b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &1993786617618681458
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8258933263715012771}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.75, y: 0.069312215, z: 0.93995607}
+  m_Center: {x: -0.0005786684, y: 0.00000047095406, z: 0.26214212}

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,9 +7,7 @@ public class Katana : MonoBehaviour
     public InputAction slayAction;
     public Transform orientation;
     public Animator animator;
-    
-    // Tracks the current enemy inside our weapon's trigger zone
-    private GameObject killObject;
+    private bool isAttacking = false;
 
     void Start()
     {
@@ -17,35 +16,23 @@ public class Katana : MonoBehaviour
 
     void Update()
     {
+        Debug.Log($"{isAttacking}");
         transform.rotation = Quaternion.Euler(orientation.eulerAngles.x, orientation.eulerAngles.y, 0);
 
-        if (slayAction.WasPressedThisFrame())
+        if (slayAction.WasPressedThisFrame() && !isAttacking)
         {
+            isAttacking = true;
             animator.SetTrigger("Swing");
 
-            // Check if an enemy is in range AND the player just pressed the button
-            if (killObject)
-            {
-                Destroy(killObject);
-                killObject = null; // Clear the reference since the object is gone
-            }
+            StartCoroutine(EndSwing());
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && isAttacking)
         {
-            killObject = other.gameObject;
-        }
-    }
-
-    // CRUCIAL: Forget the enemy if we walk away from it without attacking
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Enemy") && other.gameObject == killObject)
-        {
-            killObject = null;
+            Destroy(other.gameObject);
         }
     }
 
@@ -57,5 +44,17 @@ public class Katana : MonoBehaviour
     void OnDisable()
     {
         slayAction.Disable();
+    }
+
+    IEnumerator EndSwing()
+    {
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("Swing"))
+            yield return null;
+
+        while (animator.GetCurrentAnimatorStateInfo(0).IsName("Swing") &&
+            animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+            yield return null;
+
+        isAttacking = false;
     }
 }

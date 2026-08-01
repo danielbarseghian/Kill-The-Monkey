@@ -14,7 +14,6 @@ public class Parry : MonoBehaviour
 
     void Update()
     {
-        Debug.Log($"{getParry}");
         transform.rotation = Quaternion.Euler(orientation.eulerAngles.x, orientation.eulerAngles.y, 0);
 
         if (parryInputAction.WasPressedThisFrame() && !getParry)
@@ -45,13 +44,11 @@ public class Parry : MonoBehaviour
         parryInputAction.Disable();
     }
 
-   IEnumerator EndParry()
+    IEnumerator EndParry()
     {
-        // Wait until the transition into Parry actually completes
         while (!animator.GetCurrentAnimatorStateInfo(0).IsName("Parry"))
             yield return null;
 
-        // Now wait until it finishes playing
         while (animator.GetCurrentAnimatorStateInfo(0).IsName("Parry") &&
             animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
             yield return null;
