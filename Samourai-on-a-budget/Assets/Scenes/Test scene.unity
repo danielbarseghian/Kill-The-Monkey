@@ -2755,6 +2755,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2099363358 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5936489522206605038, guid: 3cb19049c09c05047965add9dbaba847, type: 3}
+  m_PrefabInstance: {fileID: 523040114274618220}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2125890430
 GameObject:
   m_ObjectHideFlags: 0
@@ -3028,8 +3033,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Katana Obj
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedComponents:
+    - {fileID: 5269317693881925972, guid: 3cb19049c09c05047965add9dbaba847, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 2341668559566158751, guid: 3cb19049c09c05047965add9dbaba847, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8258933263715012771, guid: 3cb19049c09c05047965add9dbaba847, type: 3}
@@ -3038,6 +3045,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8258933263715012771, guid: 3cb19049c09c05047965add9dbaba847, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6399659691269270141}
+    - targetCorrespondingSourceObject: {fileID: 8258933263715012771, guid: 3cb19049c09c05047965add9dbaba847, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6399659691269270150}
     - targetCorrespondingSourceObject: {fileID: 8258933263715012771, guid: 3cb19049c09c05047965add9dbaba847, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6399659691269270145}
@@ -3100,8 +3110,41 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.072280735, y: 0.069312215, z: 0.93995607}
+  m_Size: {x: 0.75, y: 0.069312215, z: 0.93995607}
   m_Center: {x: -0.0005786684, y: 0.00000047095406, z: 0.26214212}
+--- !u!114 &6399659691269270150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725132712118623064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdde58025147cf64aace3ecac7842fc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Parry
+  parryInputAction:
+    m_Name: Parry Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d5757199-093a-439b-8b53-c147626519d4
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 610cb48f-4d7e-48a5-998c-d3e04a233f00
+      m_Path: <Keyboard>/f
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Parry Input
+      m_Flags: 0
+    m_Flags: 0
+  orientation: {fileID: 1080919620}
+  parryAudio: {fileID: 8300000, guid: c29a60274532a04419f151955a619a17, type: 3}
+  audioSource: {fileID: 2099363358}
+  animator: {fileID: 6399659691269270141}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
