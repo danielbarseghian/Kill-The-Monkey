@@ -6,38 +6,47 @@ public class Amo : MonoBehaviour
     private float timer = 0f;
     public float destroyRate = 5f;
     private Transform player;
+    [HideInInspector] public Vector3 orientation;
+    [HideInInspector] public bool isParried = false;
 
     void Start()
     {
+        orientation = Vector3.forward;
+
         // Find the player
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         
         if (playerObj != null)
         {
             player = playerObj.transform;
-            // Face the player instantly upon spawning
+
+            // deadly stare to the player (litterally stare him until he dies)
             transform.LookAt(player);
+            orientation = transform.forward;
         }
     }
 
     void Update()
     {
-        // Vector3.forward moves the bullet in its OWN forward direction
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.position += orientation * speed * Time.deltaTime;
 
         // Timer to destroy bullet
         timer += Time.deltaTime;
         if (timer >= destroyRate)
-        {
             Destroy(gameObject);
-        }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Enemy") && isParried)
         {
-            // boom boom
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
+
+        else if (other.CompareTag("Player"))
+        {
+            // Booom boom
         }
     }
 }

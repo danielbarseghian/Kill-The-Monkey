@@ -65,6 +65,7 @@ MonoBehaviour:
     m_Flags: 0
   orientation: {fileID: 7617755039519536821}
   animator: {fileID: 2049747189180604399}
+  script: {fileID: 0}
 --- !u!65 &1064368117508179225
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -615,6 +616,7 @@ MonoBehaviour:
   parryAudio: {fileID: 8300000, guid: c29a60274532a04419f151955a619a17, type: 3}
   audioSource: {fileID: 5936489522206605038}
   animator: {fileID: 2049747189180604399}
+  swingSound: {fileID: 8300000, guid: 75e71e138b2aee149b881b4980515b75, type: 3}
 --- !u!95 &2049747189180604399
 Animator:
   serializedVersion: 7

@@ -5,11 +5,12 @@ using UnityEngine.InputSystem;
 public class Parry : MonoBehaviour
 {
     public InputAction parryInputAction;
-    private GameObject parryObject;
     public Transform orientation;
     public AudioClip parryAudio;
     public AudioSource audioSource;
     public Animator animator;
+    public AudioClip swingSound;
+
     private bool getParry = false;
 
     void Update()
@@ -29,8 +30,11 @@ public class Parry : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet") && getParry)
         {
+            Amo script =  other.gameObject.GetComponent<Amo>();
             audioSource.PlayOneShot(parryAudio);
-            Destroy(parryObject);
+            script.orientation = orientation.forward.normalized;
+            script.speed *= 2;
+            script.isParried = true;
         }
     }
 
@@ -54,5 +58,11 @@ public class Parry : MonoBehaviour
             yield return null;
 
         getParry = false;
+    }
+
+    // I have to put this here since the script is attached to the animation
+    public void PlaySwing()
+    {
+        audioSource.PlayOneShot(swingSound);
     }
 }

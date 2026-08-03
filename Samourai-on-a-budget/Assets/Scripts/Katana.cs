@@ -9,7 +9,6 @@ public class Katana : MonoBehaviour
     public Animator animator;
     private bool isAttacking = false;
     public EnemyKilled script;
-
     void Start()
     {
         slayAction.Enable();
