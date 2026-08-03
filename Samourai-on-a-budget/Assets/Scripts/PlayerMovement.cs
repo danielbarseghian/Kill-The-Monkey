@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     InputAction sprintInputAction;
     public Transform orientation;
     public int gravityMultiplier = 0;
-    private Vector3 baseMultiplier;
     private float moveSpeed = 0;
     public float walkSpeed = 12;
     public float sprintSpeed = 15;
@@ -25,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckDistance = .5f;
     public int jumpForce;
     private PlayerState state;
+    private Vector3 startPosition;
 
     [Header("Drag")]
     public float playerHeight;
@@ -83,10 +83,10 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        baseMultiplier = Physics.gravity;
         Physics.gravity *= gravityMultiplier;
         baseSize = transform.localScale.y;
         crouchSize = baseSize / 2;
+        startPosition = transform.position;
     }
 
     void Update()
@@ -103,8 +103,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (transform.localPosition.y < -10)
         {
-            Physics.gravity = baseMultiplier;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            rb.linearVelocity = Vector3.zero;
+            transform.position = startPosition;
         }
 
         HandleState();

@@ -7,4 +7,5 @@ Credits:
 * "Cloud Low Poly - Large" (https://skfb.ly/pLvO7) by PolyDavid is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 * Rudolfs.Balcers for katana model
 * "chimpanzee Monkey 3d model free" (https://skfb.ly/pLTZM) by iRahulRajput is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+* Dancing chimpanzee sound: sagib on audio.com
 
