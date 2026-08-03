@@ -1,9 +1,7 @@
-using NUnit.Framework;
 using TMPro;
-using Unity.Hierarchy.Editor;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     InputAction sprintInputAction;
     public Transform orientation;
     public int gravityMultiplier = 0;
+    private Vector3 baseMultiplier;
     private float moveSpeed = 0;
     public float walkSpeed = 12;
     public float sprintSpeed = 15;
@@ -84,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        baseMultiplier = Physics.gravity;
         Physics.gravity *= gravityMultiplier;
         baseSize = transform.localScale.y;
         crouchSize = baseSize / 2;
@@ -99,6 +99,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 canSlide = true;
             }
+        }
+
+        if (transform.localPosition.y < -10)
+        {
+            Physics.gravity = baseMultiplier;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         HandleState();

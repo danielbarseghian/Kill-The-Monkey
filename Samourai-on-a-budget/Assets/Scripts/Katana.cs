@@ -8,6 +8,7 @@ public class Katana : MonoBehaviour
     public Transform orientation;
     public Animator animator;
     private bool isAttacking = false;
+    public EnemyKilled script;
 
     void Start()
     {
@@ -16,7 +17,6 @@ public class Katana : MonoBehaviour
 
     void Update()
     {
-        Debug.Log($"{isAttacking}");
         transform.rotation = Quaternion.Euler(orientation.eulerAngles.x, orientation.eulerAngles.y, 0);
 
         if (slayAction.WasPressedThisFrame() && !isAttacking)
@@ -28,11 +28,12 @@ public class Katana : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Enemy") && isAttacking)
         {
             Destroy(other.gameObject);
+            script.enemyKilled++;
         }
     }
 
