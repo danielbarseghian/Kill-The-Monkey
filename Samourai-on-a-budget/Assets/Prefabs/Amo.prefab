@@ -106,6 +106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Amo
   speed: 25
   destroyRate: 5
+  orientation: {x: 0, y: 0, z: 0}
+  isParried: 0
 --- !u!135 &315580740221616511
 SphereCollider:
   m_ObjectHideFlags: 0

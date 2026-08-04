@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 483107427788841424}
   - component: {fileID: 3410620976055882822}
   - component: {fileID: 4171425298759495096}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bounce Platform
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -125,4 +125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e2390e590a9ebff8a220ee01dda6b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BouncingPlatform
-  jumpMultiplier: 120000
+  jumpMultiplier: 1200000

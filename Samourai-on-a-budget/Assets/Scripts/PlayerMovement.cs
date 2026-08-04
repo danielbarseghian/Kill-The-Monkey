@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public int jumpForce;
     private PlayerState state;
     private Vector3 startPosition;
+    public float maxFloorLevel = -10;
 
     [Header("Drag")]
     public float playerHeight;
@@ -101,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (transform.localPosition.y < -10)
+        if (transform.localPosition.y < maxFloorLevel)
         {
             rb.linearVelocity = Vector3.zero;
             transform.position = startPosition;
