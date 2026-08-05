@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e2390e590a9ebff8a220ee01dda6b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BouncingPlatform
-  jumpMultiplier: 120000
+  bounceForce: 20
 --- !u!1 &761533094
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,6 +2219,10 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 204741867}
+    - target: {fileID: 5726972355975172512, guid: 3cb19049c09c05047965add9dbaba847, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5902090323117050778, guid: 3cb19049c09c05047965add9dbaba847, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.15

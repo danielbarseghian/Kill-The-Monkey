@@ -30,29 +30,25 @@ public class Enemy : MonoBehaviour
         // If player is inside the radius, shoot
         if (distanceToPlayer <= checkRadius)
         {
+            // Look at player
+            Vector3 look = player.position;
+            look.y = transform.position.y;
+
+            transform.LookAt(look);
+
             Vector3 direction = (player.position - launchArea.position).normalized;
             float distance = Vector3.Distance(launchArea.position, player.position);
 
             if (Physics.Raycast(launchArea.position, direction, out RaycastHit hit, distance, lineOfSightMask))
             {
-                if (hit.collider.CompareTag("Player"))
-                {
-                    // Player was the first thing hit, so there is a clear line of sight.
-                    Instantiate(amo, launchArea.position, transform.rotation);
-                }
-            }
-                // Look at player
-            Vector3 look = player.position;
-            look.y = transform.position.y;
+                fireTimer += Time.deltaTime;
 
-            transform.LookAt(look);
-        
-            // Launch projectile
-            fireTimer += Time.deltaTime;
-            if (fireTimer >= fireRate) 
-            {
-                Instantiate(amo, launchArea.position, transform.rotation);
-                fireTimer = 0f;
+                if (fireTimer >= fireRate) 
+                {
+                    // Launch projectile
+                    Instantiate(amo, launchArea.position, transform.rotation);
+                    fireTimer = 0f;
+                }
             }
         }
     }

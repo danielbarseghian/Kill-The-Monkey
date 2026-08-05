@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Amo : MonoBehaviour
@@ -13,7 +14,7 @@ public class Amo : MonoBehaviour
     {
         orientation = Vector3.forward;
 
-        // Find the player
+        // Find player
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         
         if (playerObj != null)
@@ -46,7 +47,12 @@ public class Amo : MonoBehaviour
 
         else if (other.CompareTag("Player"))
         {
-            // Booom boom
+            PlayerMovement pm = other.GetComponentInParent<PlayerMovement>();
+
+            if (pm == null)
+                Debug.Log("Script Not found");
+
+            pm.RemoveHeart();
         }
     }
 }

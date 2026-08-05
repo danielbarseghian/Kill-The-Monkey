@@ -1,4 +1,7 @@
+using System.Collections;
+using NUnit.Framework;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -52,6 +55,12 @@ public class PlayerMovement : MonoBehaviour
     private float slideTimer;
     private bool isSliding;
 
+    [Header("Hearts")]
+    public int maxHearts = 3;
+    [HideInInspector] public int hearts;
+    public float vulnabilityTime = 3;
+    private bool isVulnarable = true;
+
     public enum PlayerState
     {
         walking,
@@ -88,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
         baseSize = transform.localScale.y;
         crouchSize = baseSize / 2;
         startPosition = transform.position;
+        hearts = maxHearts;
     }
 
     void Update()
@@ -106,7 +116,12 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = Vector3.zero;
             transform.position = startPosition;
+            if (isVulnarable)
+                RemoveHeart();
         }
+
+        if (hearts <= 0)
+            SceneManager.LoadScene(2);
 
         HandleState();
 
@@ -278,6 +293,17 @@ public class PlayerMovement : MonoBehaviour
         return Vector3.ProjectOnPlane(moveDirection, slopehit.normal).normalized;
     }
 
+    public void RemoveHeart()
+    {
+        if (isVulnarable)
+        {
+            hearts--;
+            isVulnarable = false;
+
+            StartCoroutine(WaitForVulnability());
+        }
+    }
+
     bool IsGrounded()
     {
         Debug.DrawRay(transform.position, Vector3.down * groundCheckDistance, Color.red);
@@ -304,5 +330,14 @@ public class PlayerMovement : MonoBehaviour
         jumpInputAction.Disable();
         sprintInputAction.Disable();
         crouchInputAction.Disable();
+    }
+
+    IEnumerator WaitForVulnability()
+    {
+        yield return new WaitForSeconds(vulnabilityTime);
+
+        Debug.Log("end coroutine");
+
+        isVulnarable = true;
     }
 }
