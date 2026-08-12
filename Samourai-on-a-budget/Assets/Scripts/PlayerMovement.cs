@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckDistance = .5f;
     public int jumpForce;
     private PlayerState state;
-    private Vector3 startPosition;
+    [HideInInspector] public Vector3 startPosition;
     public float maxFloorLevel = -10;
 
     [Header("Drag")]

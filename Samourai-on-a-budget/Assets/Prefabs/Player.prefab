@@ -63,6 +63,7 @@ MonoBehaviour:
       m_Action: Slay
       m_Flags: 0
     m_Flags: 0
+    m_Priority: 0
   orientation: {fileID: 7617755039519536821}
   animator: {fileID: 2049747189180604399}
   script: {fileID: 0}
@@ -132,7 +133,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.209
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -306,6 +307,8 @@ MonoBehaviour:
     m_Bits: 8
   groundCheckDistance: 0.5
   jumpForce: 10
+  startPosition: {x: 0, y: 0, z: 0}
+  maxFloorLevel: -10
   playerHeight: 2
   groundDrag: 5
   airDrag: 1
@@ -314,6 +317,9 @@ MonoBehaviour:
   maxSlideTime: 1
   slideForce: 70
   slideCooldown: 0
+  maxHearts: 5
+  hearts: 0
+  vulnabilityTime: 3
 --- !u!1 &4833520833656469671
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +365,7 @@ GameObject:
   - component: {fileID: 3126145735582812880}
   m_Layer: 6
   m_Name: PlayerObj
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -612,6 +618,7 @@ MonoBehaviour:
       m_Action: Parry Input
       m_Flags: 0
     m_Flags: 0
+    m_Priority: 0
   orientation: {fileID: 7617755039519536821}
   parryAudio: {fileID: 8300000, guid: c29a60274532a04419f151955a619a17, type: 3}
   audioSource: {fileID: 5936489522206605038}
