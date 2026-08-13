@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     InputAction jumpInputAction;
     InputAction sprintInputAction;
     public Transform orientation;
-    public int gravityMultiplier = 0;
+    
     private float moveSpeed = 0;
     public float walkSpeed = 12;
     public float sprintSpeed = 15;
@@ -93,7 +93,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Physics.gravity *= gravityMultiplier;
         baseSize = transform.localScale.y;
         crouchSize = baseSize / 2;
         startPosition = transform.position;

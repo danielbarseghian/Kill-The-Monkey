@@ -7,12 +7,9 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    guid: 618f195b293aedead9e443ff2fffd05d
   - enabled: 1
-    path: Assets/Scenes/WinScene.unity
-    guid: 3db38bff03d389b4cb439a7b2621eadf
-  - enabled: 1
-    path: Assets/Scenes/LoseScene.unity
-    guid: d40853656d407744884affaa1b328abc
+    path: Assets/Scenes/Level 2.unity
+    guid: adf620532b7cfa24d97dc65afb0383ae
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

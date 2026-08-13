@@ -319,7 +319,7 @@ MonoBehaviour:
   slideCooldown: 0
   maxHearts: 5
   hearts: 0
-  vulnabilityTime: 10
+  vulnabilityTime: 6
 --- !u!1 &4833520833656469671
 GameObject:
   m_ObjectHideFlags: 0
