@@ -308,7 +308,7 @@ MonoBehaviour:
   groundCheckDistance: 0.5
   jumpForce: 10
   startPosition: {x: 0, y: 0, z: 0}
-  maxFloorLevel: -10
+  maxFloorLevel: -30
   playerHeight: 2
   groundDrag: 5
   airDrag: 1
@@ -319,7 +319,7 @@ MonoBehaviour:
   slideCooldown: 0
   maxHearts: 5
   hearts: 0
-  vulnabilityTime: 3
+  vulnabilityTime: 10
 --- !u!1 &4833520833656469671
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +461,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.45
+  m_Radius: 0.42
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -665,5 +665,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.75, y: 0.069312215, z: 0.93995607}
-  m_Center: {x: -0.0005786684, y: 0.00000047095406, z: 0.26214212}
+  m_Size: {x: 0.75, y: 0.30585098, z: 0.93995607}
+  m_Center: {x: -0.0005791113, y: -0.11826882, z: 0.26214212}

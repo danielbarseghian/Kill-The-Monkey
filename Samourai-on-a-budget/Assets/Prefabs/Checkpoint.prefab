@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4930085971496010921}
   - component: {fileID: 8769524516012642448}
+  - component: {fileID: 5356143584673535675}
   m_Layer: 0
   m_Name: Checkpoint
   m_TagString: Untagged
@@ -53,3 +54,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 19.91, y: 5.49, z: 11.31}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5356143584673535675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443074951843846323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6e30ed495a3ab47b4772013ef6a513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Checkpoint

@@ -6,9 +6,13 @@ public class Checkpoint : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerMovement script = other.gameObject.GetComponent<PlayerMovement>();
 
-            script.startPosition = transform.position;
+            PlayerMovement script = other.gameObject.transform.parent.GetComponentInParent<PlayerMovement>();
+
+            if (script != null)
+                script.startPosition = transform.position;
+            else
+                Debug.Log("Script not found :(");
         }
     }
 }
