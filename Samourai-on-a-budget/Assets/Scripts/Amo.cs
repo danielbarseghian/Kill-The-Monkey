@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Amo : MonoBehaviour
@@ -6,22 +5,25 @@ public class Amo : MonoBehaviour
     public float speed = 5f;
     private float timer = 0f;
     public float destroyRate = 5f;
+    public int damage;
     private Transform player;
     [HideInInspector] public Vector3 orientation;
     [HideInInspector] public bool isParried = false;
+    public string lookAtObject = "Player";
+
 
     void Start()
     {
         orientation = Vector3.forward;
 
         // Find player
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        GameObject playerObj = GameObject.FindGameObjectWithTag(lookAtObject);
         
         if (playerObj != null)
         {
+            // Oriente ourself to the Player
             player = playerObj.transform;
 
-            // deadly stare to the player (litterally stare him until he dies)
             transform.LookAt(player);
             orientation = transform.forward;
         }
@@ -39,20 +41,27 @@ public class Amo : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        // For the enemy
         if (other.CompareTag("Enemy") && isParried)
         {
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
 
+
         else if (other.CompareTag("Player"))
         {
+            // Get the Script
             PlayerMovement pm = other.GetComponentInParent<PlayerMovement>();
 
             if (pm == null)
                 Debug.Log("Script Not found");
 
+            // Initiate the function to remove a heart
             pm.RemoveHeart();
         }
+
+        
     }
+
 }

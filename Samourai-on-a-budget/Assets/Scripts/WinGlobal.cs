@@ -1,8 +1,8 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinGlobal : MonoBehaviour
 {
-
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -10,5 +10,12 @@ public class WinGlobal : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void Restart()
+    {
+        LevelController script = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
+
+        SceneManager.LoadScene(script.currentLevel);
     }
 }

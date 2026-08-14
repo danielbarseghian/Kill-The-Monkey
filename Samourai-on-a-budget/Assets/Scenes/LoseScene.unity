@@ -387,7 +387,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 65566289}
         m_TargetAssemblyTypeName: WinGlobal, Assembly-CSharp
-        m_MethodName: Quit
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 505830043}
   - component: {fileID: 505830042}
   m_Layer: 5
-  m_Name: WON
+  m_Name: LOST
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

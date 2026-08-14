@@ -1,7 +1,5 @@
 using System.Collections;
-using NUnit.Framework;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -120,7 +118,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (hearts <= 0)
-            SceneManager.LoadScene(2);
+        {
+            Disable_all();
+            SceneManager.LoadScene(3);
+        }
 
         HandleState();
 
@@ -315,6 +316,14 @@ public class PlayerMovement : MonoBehaviour
         );
     }
 
+    public void Disable_all()
+    {
+        moveInputAction.Disable();
+        jumpInputAction.Disable();
+        sprintInputAction.Disable();
+        crouchInputAction.Disable();
+    }
+
     void OnEnable()
     {
         moveInputAction.Enable();
@@ -325,10 +334,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDisable()
     {
-        moveInputAction.Disable();
-        jumpInputAction.Disable();
-        sprintInputAction.Disable();
-        crouchInputAction.Disable();
+        Disable_all();
     }
 
     IEnumerator WaitForVulnability()

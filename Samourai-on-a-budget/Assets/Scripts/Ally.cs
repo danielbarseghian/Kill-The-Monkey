@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Ally : MonoBehaviour
 {
     private Transform player;
 
@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Monkey").transform;
 
         fireRate = Random.Range(fireRateMin, fireRateMax);
     }

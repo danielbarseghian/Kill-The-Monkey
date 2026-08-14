@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 315580740221616511}
   - component: {fileID: -8468249828874351542}
   m_Layer: 0
-  m_Name: Amo
+  m_Name: Friendly-Amo
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   damage: 10
   orientation: {x: 0, y: 0, z: 0}
   isParried: 0
-  lookAtObject: Player
+  lookAtObject: Monkey
 --- !u!135 &315580740221616511
 SphereCollider:
   m_ObjectHideFlags: 0
