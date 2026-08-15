@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - LevelController
   - Monkey
+  - EnemyKilled
   layers:
   - Default
   - TransparentFX

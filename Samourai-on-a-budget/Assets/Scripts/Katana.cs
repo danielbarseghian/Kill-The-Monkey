@@ -8,7 +8,6 @@ public class Katana : MonoBehaviour
     public Transform orientation;
     public Animator animator;
     private bool isAttacking = false;
-    public EnemyKilled script;
     void Start()
     {
         slayAction.Enable();
@@ -32,7 +31,6 @@ public class Katana : MonoBehaviour
         if (other.CompareTag("Enemy") && isAttacking)
         {
             Destroy(other.gameObject);
-            script.enemyKilled++;
         }
     }
 

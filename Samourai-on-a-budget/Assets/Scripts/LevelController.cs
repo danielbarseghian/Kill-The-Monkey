@@ -8,15 +8,15 @@ public class LevelController : MonoBehaviour
     private static LevelController instance;
 
     private void Awake()
-    {
-        Physics.gravity *= gravityMultiplier;
-        
+    {        
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
             return;
         }
 
+        Physics.gravity *= gravityMultiplier;
+        
         instance = this;
         DontDestroyOnLoad(gameObject);
     }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2360323975665228993}
   m_Layer: 0
   m_Name: Ally
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,13 +76,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ally
   amo: {fileID: 881643468675299150, guid: 33d308c7da29c8d4aa5177cb26b9b732, type: 3}
-  fireRateMax: 3
-  fireRateMin: 1
-  launchArea: {fileID: 0}
+  fireRateMax: 0.5
+  fireRateMin: 2.2
+  launchArea: {fileID: 1114882355196263190}
   checkRadius: 20
   lineOfSightMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!65 &2360323975665228993
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dc94ddde763ceab65a61d924b7321945, type: 2}
+  - {fileID: 2100000, guid: d8e06dd2f524592468eb9065866c635a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
