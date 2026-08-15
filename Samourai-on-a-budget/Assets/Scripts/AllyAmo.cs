@@ -1,15 +1,14 @@
 using UnityEngine;
 
-public class Amo : MonoBehaviour
+public class AllyAmo : MonoBehaviour
 {
     public float speed = 5f;
     private float timer = 0f;
     public float destroyRate = 5f;
-    public int damage;
+    public int damage = 10;
     private Transform player;
     [HideInInspector] public Vector3 orientation;
-    [HideInInspector] public bool isParried = false;
-    public string lookAtObject = "Player";
+    public string lookAtObject = "Monkey";
 
 
     void Start()
@@ -41,23 +40,19 @@ public class Amo : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log($"entered trigger {other.gameObject.name}");
+
         // For the enemy
-        if (other.CompareTag("Enemy") && isParried)
+        if (other.CompareTag("Monkey"))
         {
-            Destroy(other.gameObject);
+            // Get the script
+            Monkey script = other.GetComponent<Monkey>();
+
+            // Remove health
+            script.health -= damage;
+
+            // End my destroing the object to optimize
             Destroy(gameObject);
-        }
-
-        else if (other.CompareTag("Player"))
-        {
-            // Get the Script
-            PlayerMovement pm = other.GetComponentInParent<PlayerMovement>();
-
-            if (pm == null)
-                Debug.Log("Script Not found");
-
-            // Initiate the function to remove a heart
-            pm.RemoveHeart();
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ally : MonoBehaviour
 {
-    private Transform player;
+    private Transform monkey;
 
     [Header("Bullets")]
     public GameObject amo;
@@ -18,38 +18,34 @@ public class Ally : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Monkey").transform;
+        monkey = GameObject.FindGameObjectWithTag("Monkey").transform;
 
         fireRate = Random.Range(fireRateMin, fireRateMax);
     }
 
     void Update()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        float distanceToMonkey = Vector3.Distance(transform.position, monkey.position);
         
         // If player is inside the radius, shoot
-        if (distanceToPlayer <= checkRadius)
+        if (distanceToMonkey <= checkRadius)
         {
-            // Look at player
-            Vector3 look = player.position;
+            // Look at monkey
+            Vector3 look = monkey.position;
             look.y = transform.position.y;
 
             transform.LookAt(look);
 
-            Vector3 direction = (player.position - launchArea.position).normalized;
-            float distance = Vector3.Distance(launchArea.position, player.position);
+            Vector3 direction = (monkey.position - launchArea.position).normalized;
+            float distance = Vector3.Distance(launchArea.position, monkey.position);
+            fireTimer += Time.deltaTime;
 
-            if (Physics.Raycast(launchArea.position, direction, out RaycastHit hit, distance, lineOfSightMask))
+            if (fireTimer >= fireRate) 
             {
-                fireTimer += Time.deltaTime;
+                // Launch projectile
+                Instantiate(amo, launchArea.position, transform.rotation);
 
-                if (fireTimer >= fireRate) 
-                {
-                    // Launch projectile
-                    Instantiate(amo, launchArea.position, transform.rotation);
-
-                    fireTimer = 0f;
-                }
+                fireTimer = 0f;
             }
         }
     }
