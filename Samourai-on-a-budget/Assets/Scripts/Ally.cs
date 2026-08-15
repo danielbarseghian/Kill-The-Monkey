@@ -1,5 +1,3 @@
-using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Ally : MonoBehaviour
@@ -36,8 +34,6 @@ public class Ally : MonoBehaviour
 
             transform.LookAt(look);
 
-            Vector3 direction = (monkey.position - launchArea.position).normalized;
-            float distance = Vector3.Distance(launchArea.position, monkey.position);
             fireTimer += Time.deltaTime;
 
             if (fireTimer >= fireRate) 

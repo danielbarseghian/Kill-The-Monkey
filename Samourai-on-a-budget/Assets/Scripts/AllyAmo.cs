@@ -40,8 +40,6 @@ public class AllyAmo : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"entered trigger {other.gameObject.name}");
-
         // For the enemy
         if (other.CompareTag("Monkey"))
         {

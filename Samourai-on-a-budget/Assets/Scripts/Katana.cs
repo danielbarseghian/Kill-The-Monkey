@@ -8,6 +8,7 @@ public class Katana : MonoBehaviour
     public Transform orientation;
     public Animator animator;
     private bool isAttacking = false;
+    public int damage = 200;
     void Start()
     {
         slayAction.Enable();
@@ -31,6 +32,18 @@ public class Katana : MonoBehaviour
         if (other.CompareTag("Enemy") && isAttacking)
         {
             Destroy(other.gameObject);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Monkey"))
+        {
+            // Get the script
+            Monkey script = other.GetComponent<Monkey>();
+
+            // Remove health
+            script.health -= damage;
         }
     }
 
