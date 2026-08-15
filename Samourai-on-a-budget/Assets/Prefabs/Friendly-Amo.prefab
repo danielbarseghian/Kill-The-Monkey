@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AllyAmo
   speed: 5
   destroyRate: 5
-  damage: 50
+  damage: 30
   orientation: {x: 0, y: 0, z: 0}
   lookAtObject: Monkey
 --- !u!54 &-8468249828874351542
