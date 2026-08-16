@@ -4,11 +4,11 @@ using TMPro;
 public class EnemyKilled : MonoBehaviour
 {
     [HideInInspector] public int enemyKilled = 0;
-    public int killRequired = 6;
+    public int killRequired = 5;
     public TextMeshProUGUI enemyKilledText;
 
     void Update()
     {
-        enemyKilledText.SetText($"{enemyKilled}/{killRequired}");
+        enemyKilledText.SetText($"Objectif: {enemyKilled}/{killRequired}");
     }
 }

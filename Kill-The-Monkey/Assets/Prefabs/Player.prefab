@@ -66,7 +66,7 @@ MonoBehaviour:
     m_Priority: 0
   orientation: {fileID: 7617755039519536821}
   animator: {fileID: 2049747189180604399}
-  script: {fileID: 0}
+  damage: 200
 --- !u!65 &1064368117508179225
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -297,7 +297,6 @@ MonoBehaviour:
   primaryInput: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   speedText: {fileID: 0}
   orientation: {fileID: 7617755039519536821}
-  gravityMultiplier: 2
   walkSpeed: 60
   sprintSpeed: 100
   airSpeed: 20
@@ -610,7 +609,15 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 610cb48f-4d7e-48a5-998c-d3e04a233f00
+      m_Id: 2f9680c4-0438-4c2b-b98f-1c1d272985c2
+      m_Path: <Mouse>/rightButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Parry Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 159264f2-b4bd-4534-89bf-b83d11f8227b
       m_Path: <Keyboard>/f
       m_Interactions: 
       m_Processors: 
