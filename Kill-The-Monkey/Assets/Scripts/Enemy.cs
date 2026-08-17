@@ -59,6 +59,7 @@ public class Enemy : MonoBehaviour
         // Find the script
         EnemyKilled script = GameObject.FindGameObjectWithTag("EnemyKilled").GetComponent<EnemyKilled>();
         
-        script.enemyKilled++;
+        if (script != null)
+            script.enemyKilled++;
     }
 }
