@@ -9,8 +9,9 @@ A samourai game where you have to kill the evil monkey! You can't have a gun but
 
 
 ## Table of Contents
-- [Inputs](#inputs)
-- [Mechanics](#mechanics)
+- [Gameplay](#gameplay)
+  - [Inputs](#inputs)
+  - [Mechanics](#mechanics)
 - [How to Play](#how-to-play)
   - [Windows](#windows)
   - [MacOS](#macos)
@@ -23,7 +24,9 @@ A samourai game where you have to kill the evil monkey! You can't have a gun but
 - [Credits](#credits)
 - [License](#license)
 
-## Inputs
+## Gameplay
+
+### Inputs
 * WASD for moving
 * Left click to attack
 * Right click or F to parry
@@ -31,7 +34,7 @@ A samourai game where you have to kill the evil monkey! You can't have a gun but
 * If you crouch while moving fast enough you will slide
 * Space for jumping
 
-## Mechanics
+### Mechanics
 **Invulnerability**
 When you get hit or even fall off the map you will have invulnerability for a short amount of seconds! It will protect you from bullets but not fall damage.
 
