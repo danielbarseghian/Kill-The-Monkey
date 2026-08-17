@@ -12,13 +12,17 @@ A samourai game where you have to kill the evil monkey! You can't have a gun but
 ## How to play
 Download it from the release page then:
 
-- **Windows:**
+   **Windows:**
   1. Unzip the downloaded file (if it isn't already). <br>
   2. Double-click **Kill-The-Monkey.exe** to launch the game.
+  <p align="center">
+  <img width="13689" height="8398" alt="with arrow" src="https://github.com/user-attachments/assets/5c577374-87ab-4838-ad3d-e2dd03a6c677" />
+  </p>
+  
 
-  > If Windows Defender SmartScreen shows a "Windows protected your PC" warning, click **More info**, then **Run anyway**.
+  > ⚠️ If Windows Defender SmartScreen shows a "Windows protected your PC" warning, click **More info**, then **Run anyway**.
 
-- **MacOS:**
+   **MacOS:**
   1. Unzip the downloaded file (if it isn't already). <br>
   2. Right-click (or Control-click) the app, then choose **Open**. <br>
   3. macOS will warn you it's from an unidentified developer — click **Open** again to confirm. <br>
@@ -26,10 +30,12 @@ Download it from the release page then:
 
   > If step 2 still doesn't work, open **System Settings -> Privacy & Security**, scroll down to the security warning about the app, and click **Open Anyway**.
 
-- **Linux:**
-  run this executable file:
+ **Linux:**
+  run this executable file by double click:
   * GUI: <br>
-    <img width="507" height="289" alt="image" src="https://github.com/user-attachments/assets/5fe21394-4809-4458-ac31-d52f876cfdb3" />
+      <p align="center">
+      <img width="507" height="289" alt="image" src="https://github.com/user-attachments/assets/5fe21394-4809-4458-ac31-d52f876cfdb3" />
+      </p>
   * By Command: <br>
     ```
     chmod +x ./Kill-The-Monkey-Linux.x86_64
@@ -37,13 +43,41 @@ Download it from the release page then:
     ```
 
 ## How to modify the project/use it for urself
-1. Download Unity Hub <br>
-2. Download Unity <br>
-   put image <br>
-3. Go to Projects -> Add -> add the folder that is inside the project <br>
-   put image
+1. Clone the repository
+```
+git clone https://github.com/danielbarseghian/Kill-The-Monkey.git
+```
+3. Download [Unity Hub](https://cloud.unity.com/home/organizations/9072015067453/onboarding/post-download?locale=en&code=Nhl_uxss0bAjjVvs3AFIWA008f&locale=en&session_state=115f6630904a68e2ac61cc68f8db01c91eba2965f22e4d49c28c529a0094e347.SxsYhjNDP8y8kPmhPbmITQ007f) <br>
+4. Download Unity
 
-> ⚠️ Be careful, Unity is pretty bad with Linux. You need to use a Debian based OS (Ubuntu, Mint, ...).
+Go to the **Installs** tab:
+
+<p align="center">
+  <img width="700" alt="Unity Hub Installs tab" src="https://github.com/user-attachments/assets/5e236a07-2389-4dc8-a1dd-7663b0a18cca" />
+</p>
+
+Choose the latest version. For best compatibility, use **`6000.5.7f1`**:
+
+<p align="center">
+  <img width="11327" height="7252" alt="pofdjwp" src="https://github.com/user-attachments/assets/58d78873-71fc-44af-8468-c575ce64e1fa" />
+</p>
+
+   
+6. Add the project <br>
+  * Go to Projects -> Add -> add the folder that is inside the project
+  
+   <p align="center">
+   <img width="15166" height="8540" alt="sfdsfwfadwa" src="https://github.com/user-attachments/assets/4c59eacf-048b-485d-bee4-05d40f3b6191" />
+   </p>
+   
+  * Add the folder inside the cloned folder
+  
+    <p align="center">
+    <img width="11150" height="6249" alt="titi" src="https://github.com/user-attachments/assets/7a45851b-4790-4907-826c-c5134d3f0194" />
+    </p>
+    
+  <br>
+> ⚠️ Be careful, Unity is pretty bad with Linux. You will need to use a Debian based OS (Ubuntu, Mint, ...).
 
 ## Credits
 
