@@ -16,13 +16,6 @@ public class Finish : MonoBehaviour
     {
         if (script.enemyKilled >= script.killRequired)
         {
-            // Get the PlayerController script so we can disable it
-            PlayerMovement script = other.GetComponentInParent<PlayerMovement>();
-            if (script != null)
-                script.Disable_all();
-            else
-                Debug.Log("the Playermovement script was not found");
-
             levelHolder.currentLevel++;
             SceneManager.LoadScene(levelHolder.currentLevel);
         }

@@ -75,8 +75,9 @@ public class PlayerMovement : MonoBehaviour
         sprintInputAction = primaryInput.FindAction("Sprint");
         crouchInputAction = primaryInput.FindAction("Crouch");
 
-        moveInputAction.performed += ctx => direction = ctx.ReadValue<Vector2>();
-        moveInputAction.canceled += ctx => direction = Vector2.zero;
+        // use thoses 
+        moveInputAction.performed += MovePerformed;
+        moveInputAction.canceled += MoveCanceled;
 
         jumpInputAction.performed += JumpAction;
 
@@ -119,7 +120,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (hearts <= 0)
         {
-            Disable_all();
             SceneManager.LoadScene(3);
         }
 
@@ -245,6 +245,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void MovePerformed(InputAction.CallbackContext ctx)
+    {
+        direction = ctx.ReadValue<Vector2>();
+    }
+
+    private void MoveCanceled(InputAction.CallbackContext ctx)
+    {
+        direction = Vector2.zero;
+    }
+
     private void CrouchAction(InputAction.CallbackContext ctx)
     {
         if (IsGrounded())
@@ -316,14 +326,6 @@ public class PlayerMovement : MonoBehaviour
         );
     }
 
-    public void Disable_all()
-    {
-        moveInputAction.Disable();
-        jumpInputAction.Disable();
-        sprintInputAction.Disable();
-        crouchInputAction.Disable();
-    }
-
     void OnEnable()
     {
         moveInputAction.Enable();
@@ -334,7 +336,25 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDisable()
     {
-        Disable_all();
+        moveInputAction.Disable();
+        jumpInputAction.Disable();
+        sprintInputAction.Disable();
+        crouchInputAction.Disable();
+    }
+
+    void OnDestroy()
+    {
+        // Unsubscribe from all events to prevent MissingReferenceExceptions
+        moveInputAction.performed -= MovePerformed;
+        moveInputAction.canceled -= MoveCanceled;
+        
+        jumpInputAction.performed -= JumpAction;
+        
+        sprintInputAction.performed -= SprintAction;
+        sprintInputAction.canceled -= UnSprintAction;
+        
+        crouchInputAction.performed -= CrouchAction;
+        crouchInputAction.canceled -= UnCrouchAction;
     }
 
     IEnumerator WaitForVulnability()
