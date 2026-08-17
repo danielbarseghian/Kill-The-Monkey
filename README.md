@@ -18,6 +18,8 @@ Download it from the release page then:
     do macOS shi
   - For linux
     uhhhhh idk
+    <img width="507" height="289" alt="image" src="https://github.com/user-attachments/assets/5fe21394-4809-4458-ac31-d52f876cfdb3" />
+
 
 ## How to modify the projeject/use it for urslef
 downlaod unityhub
