@@ -3,22 +3,27 @@
 A samourai game where you have to kill the evil monkey ! You can't have a gun but rather have a katana since youre too cool to hold a gun!
 
 ## inputs
-wasd for moving
-left click to attack
-right click or f to parry
-ctrl to crouch
-if you crouch while moving fast enough you will slide
-space for jumping.
+ * wasd for moving
+ * left click to attack
+ * right click or f to parry
+ * ctrl to crouch
+ * if you crouch while moving fast enough you will slide
+ * space for jumping.
 
 ## How to play
 Download it from the release page then: 
   - For Windows:
-   run the exe
+       run the exe
+        <put image>
   - For MacOS:
-    do macOS shi
+      do macOS shi
   - For linux
-    uhhhhh idk
-    <img width="507" height="289" alt="image" src="https://github.com/user-attachments/assets/5fe21394-4809-4458-ac31-d52f876cfdb3" />
+     run this executable file:
+      * GUI: <br>
+          <img width="507" height="289" alt="image" src="https://github.com/user-attachments/assets/5fe21394-4809-4458-ac31-d52f876cfdb3" />
+      * By Command: <br>
+        ```chmod +x ./Kill-The-Monkey-Linux.x86_64```
+        ```./Kill-The_monkey-Linux.x86_64 ```
 
 
 ## How to modify the projeject/use it for urslef
