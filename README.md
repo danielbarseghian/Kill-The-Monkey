@@ -1,9 +1,38 @@
 # Kill-the-monkey
 
-A samourai game where the enemies have guns but youre too cool for that so you have a katana (a gun was out of budget)
+A samourai game where you have to kill the evil monkey ! You can't have a gun but rather have a katana since youre too cool to hold a gun!
+
+## inputs
+wasd for moving
+left click to attack
+right click or f to parry
+ctrl to crouch
+if you crouch while moving fast enough you will slide
+space for jumping.
+
+## How to play
+Download it from the release page then: 
+  - For Windows:
+   run the exe
+  - For MacOS:
+    do macOS shi
+  - For linux
+    uhhhhh idk
+
+## How to modify the projeject/use it for urslef
+downlaod unityhub
+
+download unity
+
+run the folder this one 
+
+<include screenshot>
+
+Do that for almost every OS 
+
+be careful unity is pretty bad with linux, you need to use debian based OS with pretty modern gpu drivers (include an era) 
 
 Credits:
-
 * Rudolfs.Balcers for katana model
 * "chimpanzee Monkey 3d model free" (https://skfb.ly/pLTZM) by iRahulRajput is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 * Dancing chimpanzee sound: sagib on audio.com
