@@ -51,13 +51,13 @@ public class Amo : MonoBehaviour
         else if (other.CompareTag("Player"))
         {
             // Get the Script
-            PlayerMovement pm = other.GetComponentInParent<PlayerMovement>();
+            PlayerController pc = other.GetComponentInParent<PlayerController>();
 
-            if (pm == null)
+            if (pc == null)
                 Debug.Log("Script Not found");
 
             // Initiate the function to remove a heart
-            pm.RemoveHeart();
+            pc.RemoveHeart();
         }
     }
 }

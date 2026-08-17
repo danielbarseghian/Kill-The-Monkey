@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WinGlobal : MonoBehaviour
+public class WinLoseGlobal : MonoBehaviour
 {
     void Start()
     {
@@ -18,6 +18,7 @@ public class WinGlobal : MonoBehaviour
     {
         LevelController script = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
 
+        Debug.Log($"index: {script.currentLevel}");
         SceneManager.LoadScene(script.currentLevel);
     }
 }

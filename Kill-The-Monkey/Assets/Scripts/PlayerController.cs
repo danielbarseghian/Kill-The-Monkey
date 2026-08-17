@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header ("Movement")]
     public InputActionAsset primaryInput;
@@ -114,13 +114,12 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = Vector3.zero;
             transform.position = startPosition;
-            if (isVulnarable)
-                RemoveHeart();
+            RemoveHeart();
         }
 
         if (hearts <= 0)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
         }
 
         HandleState();

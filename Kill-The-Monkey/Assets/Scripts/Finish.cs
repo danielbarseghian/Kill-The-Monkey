@@ -35,7 +35,9 @@ public class Finish : MonoBehaviour
         {
             if (script.enemyKilled >= script.killRequired)
             {
+                Debug.Log($"before index: {levelHolder.currentLevel}");
                 levelHolder.currentLevel++;
+                Debug.Log($"after index: {levelHolder.currentLevel}");
                 SceneManager.LoadScene(levelHolder.currentLevel);
             }
             else

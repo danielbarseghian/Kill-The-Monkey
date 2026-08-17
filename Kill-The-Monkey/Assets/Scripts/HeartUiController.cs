@@ -1,11 +1,10 @@
 using UnityEngine.UI;
 using UnityEngine;
-using Unity.VisualScripting;
 using System.Linq;
 
 public class HeartUiController : MonoBehaviour
 {
-    public PlayerMovement player;
+    public PlayerController player;
     public Image[] hearts = new Image[3];
     
 

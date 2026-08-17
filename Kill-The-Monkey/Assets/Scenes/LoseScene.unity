@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 65566290}
   - component: {fileID: 65566289}
   m_Layer: 0
-  m_Name: Global
+  m_Name: win/lose global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

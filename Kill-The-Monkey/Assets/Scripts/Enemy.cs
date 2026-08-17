@@ -1,5 +1,3 @@
-using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -16,11 +14,20 @@ public class Enemy : MonoBehaviour
     private float fireTimer;
     [SerializeField] private LayerMask lineOfSightMask;
 
+    [Header("anti softlock")]
+    private Vector3 startPosition;
+    public float maxYArea = -30;
+    private Rigidbody rb;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         fireRate = Random.Range(fireRateMin, fireRateMax);
+
+        startPosition = transform.position;
+
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -51,6 +58,12 @@ public class Enemy : MonoBehaviour
                     fireTimer = 0f;
                 }
             }
+        }
+
+        if (transform.position.y < maxYArea)
+        {
+            rb.linearVelocity = Vector3.zero;
+            transform.position = startPosition;
         }
     }
 

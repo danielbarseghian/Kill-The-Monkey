@@ -9,7 +9,7 @@ public class Monkey : MonoBehaviour
     {
         if (health <= 0)
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(5);
             Destroy(this.gameObject);
         }
     }

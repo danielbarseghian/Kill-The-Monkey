@@ -2373,7 +2373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf42304913ccef4281125f9657222a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelHolder
-  currentLevel: 0
+  currentLevel: 1
   gravityMultiplier: 2
 --- !u!1 &2004647869
 GameObject:
