@@ -1,6 +1,8 @@
 # Kill-the-monkey
 A samourai game where you have to kill the evil monkey! You can't have a gun but rather have a katana since youre too cool to hold a gun! You will need to beat 3 levels, i will let you discover them! The game is built in Unity with C#!
 
+> If the web link doesn't work, please use the GitHub release instead.
+
 <img width="800" height="450" alt="clideo_editor_7fafe5ec226d468eafe8482ead1ec857-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/de68cb14-0fee-4866-a20a-46d40165c560" />
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
